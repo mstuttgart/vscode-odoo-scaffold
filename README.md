@@ -1,0 +1,2 @@
+# vscode-odoo-module-gen
+
