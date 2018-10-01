@@ -1,7 +1,7 @@
 {
     "name": "odoo-scaffold",
     "displayName": "Odoo Scaffold",
-    "description": "Generate Odoo modules made easy",
+    "description": "Odoo modules made easy",
     "version": "0.1.0",
     "publisher": "mstuttgart",
     "license": "SEE LICENSE IN LICENSE",
@@ -36,14 +36,14 @@
         "url": "https://github.com/mstuttgart/vscode-odoo-scaffold"
     },
     "activationEvents": [
-        "onCommand:extension.generateOdooModule"
+        "onCommand:extension.odooScaffold"
     ],
     "main": "./out/extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.generateOdooModule",
-                "title": "Odoo Module Generator",
+                "command": "extension.odooScaffold",
+                "title": "New Odoo Module",
                 "category": "Python"
             }
         ],
@@ -51,7 +51,7 @@
             "explorer/context": [
                 {
                     "when": "explorerResourceIsFolder",
-                    "command": "extension.generateOdooModule",
+                    "command": "extension.odooScaffold",
                     "group": "navigation"
                 }
             ]
