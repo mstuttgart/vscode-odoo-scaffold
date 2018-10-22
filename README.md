@@ -1,65 +1,63 @@
-# odoo-module-gen README
+# Visual Code Odoo Scaffold
 
-This is the README for your extension "odoo-module-gen". After writing up a brief description, we recommend including the following sections.
+[![Version](https://vsmarketplacebadge.apphb.com/version-short/mstuttgart.odoo-scaffold.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=mstuttgart.odoo-scaffold)
+[![Installs](https://vsmarketplacebadge.apphb.com/installs/mstuttgart.odoo-scaffold.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=mstuttgart.odoo-scaffold)
+[![Ratings](https://vsmarketplacebadge.apphb.com/rating/mstuttgart.odoo-scaffold.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=mstuttgart.odoo-scaffold)
+
+This extension run Odoo [scaffold](https://www.odoo.com/documentation/11.0/reference/cmdline.html#scaffolding) command 
+and generate Odoo modules.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+* Show in file explorer a menu to create Odoo module
 
-For example if there is an image subfolder under your extension project workspace:
+![feature X](images/screenshot.png)
 
-\!\[feature X\]\(images/feature-x.png\)
+* Allow select path of new Odoo module
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+![feature X](images/screenshot2.png)
+
+and name of new Odoo module
+
+![feature X](images/screenshot_1.png)
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+This module dependes of [odoo-bin](https://github.com/odoo/odoo/blob/11.0/odoo-bin) executable in odoo core and work 
+Odoo 10.0+ and need of Python Path configured.
+
+## Installation
+
+Launch *Quick Open*
+  - <img src="https://www.kernel.org/theme/images/logos/favicon.png" width=16 height=16/> <a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf">Linux</a> `Ctrl+P`
+  - <img src="https://developer.apple.com/favicon.ico" width=16 height=16/> <a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf">macOS</a> `⌘P`
+  - <img src="https://www.microsoft.com/favicon.ico" width=16 height=16/> <a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf">Windows</a> `Ctrl+P`
+
+Paste the following command and press `Enter`:
+
+```
+ext install mstuttgart.odoo-scaffold
+```
+
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+By default the extension uses the configuration from [Python extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python).
+To configure Python for your project see [Getting Started with Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial).
 
-For example:
+You need to set `odoo-bin` path of you project to made this extension works.
 
-This extension contributes the following settings:
+List of currently used properties:
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+Property                          | Description
+----------------------------------|---------------------------------------------------------------
+`odooScaffold.odooBinPath`        | Path to `odoo-bin` executable
 
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+See [Changelog.md](CHANGELOG.md)
 
-### 1.0.0
+## Credits
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Copyright (C) 2018 by Michell Stuttgart
