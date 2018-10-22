@@ -40,6 +40,19 @@
     ],
     "main": "./out/extension",
     "contributes": {
+        "configuration": [
+            {
+                "title": "Odoo Scaffold Configuration",
+                "properties": {
+                    "odooScaffold.odooBinPath": {
+                        "type": "string",
+                        "default": "",
+                        "description": "Set odoo-bin path",
+                        "scope": "resource"
+                    }
+                }
+            }
+        ],
         "commands": [
             {
                 "command": "extension.odooScaffold",
@@ -50,7 +63,6 @@
         "menus": {
             "explorer/context": [
                 {
-                    "when": "explorerResourceIsFolder",
                     "command": "extension.odooScaffold",
                     "group": "navigation"
                 }
@@ -70,5 +82,8 @@
         "tslint": "^5.8.0",
         "@types/node": "^8.10.25",
         "@types/mocha": "^2.2.42"
-    }
+    },
+    "extensionDependencies":[
+        "ms-python.python"
+    ]
 }

@@ -1,8 +1,8 @@
 'use strict';
 
 import * as vscode from 'vscode';
-import * as fs from 'fs';
 import * as path from 'path';
+
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -10,66 +10,77 @@ export function activate(context: vscode.ExtensionContext) {
 
     let disposable = vscode.commands.registerCommand('extension.odooScaffold', (fileObj) => {
 
-        // Get base path
-        let basePath = fileObj.path;
+        // Get project path
+        const projectRoot = vscode.workspace.workspaceFolders[0].uri.fsPath;
 
-        // Paths list
-        const folders = [];
+        // Get path where module will be created
+        let relativePath = fileObj ? fileObj.path : projectRoot;
 
-        // Odoo module folders
-        const moduleFolder = path.join(basePath, 'new_module');
-        const modelsFolder = path.join(moduleFolder, 'models');
-        const testsFolder = path.join(moduleFolder, 'tests');
-        const viewsFolder = path.join(moduleFolder, 'views');
-        const staticFolder = path.join(moduleFolder, 'static');
+        // Get odoo-bin path from configuration
+        const odooBinPath = vscode.workspace.getConfiguration('odooScaffold').get('odooBinPath');
 
-        folders.push(moduleFolder);
-        folders.push(modelsFolder);
-        folders.push(testsFolder);
-        folders.push(viewsFolder);
-        folders.push(staticFolder);
+        // Get Python enviromnent path
+        const pythonPath = vscode.workspace.getConfiguration('python').get('pythonPath');
 
-        // Create folders
-        for (const folder of folders) {
-            fs.mkdirSync(folder);
-        }
-
-        // Files list
-        const files = [];
-
-        // Set the path of files
-        const moduleManifestFile = path.join(moduleFolder, '__manifest__.py');
-        const moduleInitFile = path.join(moduleFolder, '__init__.py');
-
-        const modelsInitFile = path.join(modelsFolder, '__init__.py');
-        const modelsModelFile = path.join(modelsFolder, 'model.py');
-
-        const testsInitFile = path.join(testsFolder, '__init__.py');
-        const testsModelFile = path.join(testsFolder, 'test_model.py');
-
-        const viewsModelFile = path.join(viewsFolder, 'model.xml');
-        const staticIndexFile = path.join(staticFolder, 'index.html');
-
-        files.push(moduleManifestFile);
-        files.push(moduleInitFile);
-
-        files.push(modelsInitFile);
-        files.push(modelsModelFile);
-
-        files.push(testsInitFile);
-        files.push(testsModelFile);
-
-        files.push(viewsModelFile);
-        files.push(staticIndexFile);
-
-        // Create the Odoo module files
-        for (const f of files) {    
-            if (!fs.existsSync(f)) {
-                fs.closeSync(fs.openSync(f, 'w'));
+        // User Input to path of new module
+        vscode.window.showInputBox({
+            value: relativePath || '',
+            prompt: 'Enter path of new Odoo module (/path/subpath/to/module)',
+            validateInput: (value) => {
+                if (value) {
+                    return null;
+                }
+                return 'Please enter a valid path';
             }
-        }
+        }).then((fullPath) => {
 
-        vscode.window.showInformationMessage('New Odoo module create successfully!');
+            if (fullPath === undefined) {
+                vscode.window.showInformationMessage('Invalid path!');
+                return;
+            }
+
+            // User Input to path od new module
+            vscode.window.showInputBox({
+                prompt: 'Enter name of new Odoo module',
+                validateInput: (value) => {
+                    if (value) {
+                        return null;
+                    }
+                    return 'Please enter a valid name to module';
+                }
+            }).then((module_name) => {
+
+                if (module_name === undefined) {
+                    vscode.window.showInformationMessage('Invalid module name!');
+                    return;
+                }
+
+                // Mount odoo-bin path
+                var abs_odooBinPath = path.join(projectRoot, odooBinPath);
+
+                // Run odoo scaffold command
+                var { spawn } = require('child_process');
+                var process = spawn(pythonPath, [abs_odooBinPath, 'scaffold', module_name, fullPath]);
+
+                process.stdout.on('data', (data: string) => {
+                    console.log(`stdout: ${data}`);
+                    vscode.window.showInformationMessage('Something went wrong! Please report on GitHub');
+                });
+
+                process.stderr.on('data', (data: string) => {
+                    console.log(`stderr: ${data}`);
+                    vscode.window.showInformationMessage('Something went wrong! Please report on GitHub');
+                });
+
+                process.on('close', (code: string) => {
+                    console.log(`child process exited with code ${code}`);
+                    vscode.window.showInformationMessage('New Odoo module create successfully!');
+                });
+
+            });
+
+        });
+
     });
 
     context.subscriptions.push(disposable);
