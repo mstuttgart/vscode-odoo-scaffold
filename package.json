@@ -42,13 +42,14 @@
     "contributes": {
         "configuration": [
             {
+                "type": "object",
                 "title": "Odoo Scaffold Configuration",
                 "properties": {
                     "odooScaffold.odooBinPath": {
                         "type": "string",
                         "default": "",
                         "description": "Set odoo-bin path",
-                        "scope": "resource"
+                        "scope": "window"
                     }
                 }
             }
