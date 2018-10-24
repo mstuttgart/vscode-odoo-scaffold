@@ -1,25 +1,57 @@
-# Visual Code Odoo Scaffold
+<h1 align="center">
+<br>
+<a name="top" href="https://github.com/mstuttgart/plano-de-estudos">
+<img src="./images/icon.png">
+</a>
+<br>
+Visual Code Odoo Scaffold
+<br>
+</h1>
 
-[![Version](https://vsmarketplacebadge.apphb.com/version-short/mstuttgart.odoo-scaffold.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=mstuttgart.odoo-scaffold)
-[![Installs](https://vsmarketplacebadge.apphb.com/installs/mstuttgart.odoo-scaffold.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=mstuttgart.odoo-scaffold)
-[![Ratings](https://vsmarketplacebadge.apphb.com/rating/mstuttgart.odoo-scaffold.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=mstuttgart.odoo-scaffold)
+<h4 align="center">A Visual Code extension to create Odoo modules easily</h4>
 
-This Visual Code extension run Odoo [scaffold](https://www.odoo.com/documentation/11.0/reference/cmdline.html#scaffolding) command 
-and generate Odoo modules.
+<p align="center">
+
+<a name="top" href="https://marketplace.visualstudio.com/items?itemName=mstuttgart.odoo-scaffold">
+<img src="https://vsmarketplacebadge.apphb.com/version-short/mstuttgart.odoo-scaffold.svg?style=flat-square">
+</a>
+<a href="https://marketplace.visualstudio.com/items?itemName=mstuttgart.odoo-scaffold">
+<img src="https://vsmarketplacebadge.apphb.com/installs/mstuttgart.odoo-scaffold.svg?style=flat-square">
+</a>
+<a href="https://marketplace.visualstudio.com/items?itemName=mstuttgart.odoo-scaffold">
+<img src="https://vsmarketplacebadge.apphb.com/rating/mstuttgart.odoo-scaffold.svg?style=flat-square">
+</a>
+
+</p>
+<p align="center">
+<b><a href="#features">Features</a></b>
+|
+<b><a href="#requirements">Requirements</a></b>
+|
+<b><a href="#installation">Installation</a></b>
+|
+<b><a href="#settings">Settings</a></b>
+|
+<b><a href="#release-notes">Release Notes</a></b>
+|
+<b><a href="#credits">Credits</a></b>
+</p>
 
 ## Features
 
 This extension allow create Odoo modules from explorer windown in easy way.
 
-### From window explores menu
+### From window explorer
 
-Right click on Explorer Window and click in `New Odoo Module`. Confirme the selected path (press `Enter`) and type the new module name and press `Enter`.
+Right click on Explorer Window and click in `New Odoo Module`.
 
 ![feature X](images/screenshot.png)
 
+Confirme the selected path (press `Enter`) and type the new module name and press `Enter`.
+
 ![feature X](images/screenshot_1.png)
 
-### From command lauch
+### From command panel
 
 Press `ctrl+shift+p` to open command panel and type `Python: New Odoo Module`. 
 
@@ -33,8 +65,9 @@ Type the name of new module:
 
 ## Requirements
 
-This module dependes of [odoo-bin](https://github.com/odoo/odoo/blob/11.0/odoo-bin) executable in odoo core and work 
-Odoo 10.0+ and need of `Python Path` configured.
+Work with Odoo 10.0+ and need of `Python Path` configured.
+
+This extension use Odoo  [scaffold](https://www.odoo.com/documentation/11.0/reference/cmdline.html#scaffolding) command to generate Odoo modules. To use it, you need to set [odoo-bin](https://github.com/odoo/odoo/blob/11.0/odoo-bin) executable path in settings of vscode.
 
 ## Installation
 
@@ -49,7 +82,7 @@ Paste the following command and press `Enter`:
 ext install mstuttgart.odoo-scaffold
 ```
 
-## Extension Settings
+## Settings
 
 By default the extension uses the configuration from [Python extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python).
 To configure Python for your project see [Getting Started with Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial).
@@ -60,7 +93,7 @@ List of currently used properties:
 
 | Property                   | Description                   |
 | -------------------------- | ----------------------------- |
-| `odooScaffold.odooBinPath` | Path to `odoo-bin` executable |
+| `odooScaffold.odooBinPath` | Absolute path to `odoo-bin` executable |
 
 
 ## Release Notes
