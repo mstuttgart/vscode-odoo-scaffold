@@ -1,7 +1,7 @@
 <h1 align="center">
 <br>
 <a name="top" href="https://github.com/mstuttgart/plano-de-estudos">
-<img src="./images/icon.png">
+<img src="https://raw.githubusercontent.com/mstuttgart/vscode-odoo-scaffold/develop/images/icon.png">
 </a>
 <br>
 Visual Code Odoo Scaffold
@@ -45,11 +45,11 @@ This extension allow create Odoo modules from explorer windown in easy way.
 
 Right click on Explorer Window and click in `New Odoo Module`.
 
-![feature X](images/screenshot.png)
+![feature X](https://raw.githubusercontent.com/mstuttgart/vscode-odoo-scaffold/develop/images/screenshot.png)
 
 Confirme the selected path (press `Enter`) and type the new module name and press `Enter`.
 
-![feature X](images/screenshot_1.png)
+![feature X](https://raw.githubusercontent.com/mstuttgart/vscode-odoo-scaffold/develop/images/screenshot_1.png)
 
 ### From command panel
 
@@ -57,11 +57,11 @@ Press `ctrl+shift+p` to open command panel and type `Python: New Odoo Module`.
 
 Type the path of where new module will be create:
 
-![feature X](images/screenshot2.png)
+![feature X](https://raw.githubusercontent.com/mstuttgart/vscode-odoo-scaffold/develop/images/screenshot2.png)
 
 Type the name of new module:
 
-![feature X](images/screenshot_1.png)
+![feature X](https://raw.githubusercontent.com/mstuttgart/vscode-odoo-scaffold/develop/images/screenshot_1.png)
 
 ## Requirements
 
