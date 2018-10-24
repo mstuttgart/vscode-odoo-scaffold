@@ -11,7 +11,13 @@ export function activate(context: vscode.ExtensionContext) {
     let disposable = vscode.commands.registerCommand('extension.odooScaffold', (fileObj) => {
 
         // Get project path
-        const projectRoot = vscode.workspace.workspaceFolders[0].uri.fsPath;
+        const activeWorkspace = vscode.workspace.workspaceFolders;
+
+        if (!activeWorkspace) {
+            return;
+        }
+
+        const projectRoot = activeWorkspace[0].uri.fsPath;
 
         // Get path where module will be created
         let relativePath = fileObj ? fileObj.path : projectRoot;
@@ -21,6 +27,12 @@ export function activate(context: vscode.ExtensionContext) {
 
         // Get Python enviromnent path
         const pythonPath = vscode.workspace.getConfiguration('python').get('pythonPath');
+
+        if (!odooBinPath) {
+            console.log('OdooBinPath not set in settings. Please add it');
+            vscode.window.showInformationMessage('OdooBinPath not set in settings. Please add it');
+            return;
+        }
 
         // User Input to path of new module
         vscode.window.showInputBox({
@@ -56,7 +68,7 @@ export function activate(context: vscode.ExtensionContext) {
                 }
 
                 // Mount odoo-bin path
-                var abs_odooBinPath = path.join(projectRoot, odooBinPath);
+                var abs_odooBinPath = path.join(projectRoot, odooBinPath ? odooBinPath.toString() : '');
 
                 // Run odoo scaffold command
                 var { spawn } = require('child_process');
