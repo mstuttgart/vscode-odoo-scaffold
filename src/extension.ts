@@ -1,7 +1,6 @@
 'use strict';
 
 import * as vscode from 'vscode';
-import * as path from 'path';
 
 
 // this method is called when your extension is activated
@@ -67,12 +66,9 @@ export function activate(context: vscode.ExtensionContext) {
                     return;
                 }
 
-                // Mount odoo-bin path
-                var abs_odooBinPath = path.join(projectRoot, odooBinPath ? odooBinPath.toString() : '');
-
                 // Run odoo scaffold command
                 var { spawn } = require('child_process');
-                var process = spawn(pythonPath, [abs_odooBinPath, 'scaffold', module_name, fullPath]);
+                var process = spawn(pythonPath, [odooBinPath, 'scaffold', module_name, fullPath]);
 
                 process.stdout.on('data', (data: string) => {
                     console.log(`stdout: ${data}`);
