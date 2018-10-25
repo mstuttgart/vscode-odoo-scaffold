@@ -88,16 +88,14 @@ By default the extension uses the configuration from [Python extension for Visua
 
 To configure Python for your project see [Getting Started with Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial).
 
-Use *absolute path* for python interpreter.
+You need to set `odoo-bin` path of you `workspace settings` to made this extension works.
 
-You need to set `odoo-bin` path of you project to made this extension works.
-
-List of currently used properties:
-
-| Property                   | Description                   |
-| -------------------------- | ----------------------------- |
-| `odooScaffold.odooBinPath` | Absolute path to `odoo-bin` executable |
-
+```json
+{
+    // ...
+  "odooScaffold.odooBinPath": "absolute/path/to/odoo-bin",
+}
+```
 
 ## Release Notes
 
