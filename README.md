@@ -92,7 +92,6 @@ You need to set `odoo-bin` path of you `workspace settings` to made this extensi
 
 ```json
 {
-    // ...
   "odooScaffold.odooBinPath": "absolute/path/to/odoo-bin",
 }
 ```
