@@ -2,7 +2,7 @@
     "name": "odoo-scaffold",
     "displayName": "Odoo Scaffold",
     "description": "Odoo modules made easy",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "mstuttgart",
     "license": "SEE LICENSE IN LICENSE",
     "engines": {
@@ -14,8 +14,7 @@
     },
     "keywords": [
         "odoo",
-        "create folders",
-        "create files",
+        "module",
         "scanffold",
         "project"
     ],
@@ -84,7 +83,7 @@
         "@types/node": "^8.10.25",
         "@types/mocha": "^2.2.42"
     },
-    "extensionDependencies":[
+    "extensionDependencies": [
         "ms-python.python"
     ]
 }
