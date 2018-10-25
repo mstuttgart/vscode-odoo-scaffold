@@ -85,7 +85,10 @@ ext install mstuttgart.odoo-scaffold
 ## Settings
 
 By default the extension uses the configuration from [Python extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python).
+
 To configure Python for your project see [Getting Started with Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial).
+
+Use *absolute path* for python interpreter.
 
 You need to set `odoo-bin` path of you project to made this extension works.
 
