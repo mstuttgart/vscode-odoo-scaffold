@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-<a name="top" href="https://github.com/mstuttgart/plano-de-estudos">
+<a name="top" href="https://marketplace.visualstudio.com/items?itemName=mstuttgart.odoo-scaffold">
 <img src="https://raw.githubusercontent.com/mstuttgart/vscode-odoo-scaffold/develop/images/icon.png">
 </a>
 <br>
@@ -13,13 +13,13 @@ Visual Code Odoo Scaffold
 <p align="center">
 
 <a name="top" href="https://marketplace.visualstudio.com/items?itemName=mstuttgart.odoo-scaffold">
-<img src="https://vsmarketplacebadge.apphb.com/version-short/mstuttgart.odoo-scaffold.svg?style=flat-square">
+<img src="https://vsmarketplacebadge.apphb.com/version-short/mstuttgart.odoo-scaffold.svg?style=flat-square" alt="Version">
 </a>
 <a href="https://marketplace.visualstudio.com/items?itemName=mstuttgart.odoo-scaffold">
-<img src="https://vsmarketplacebadge.apphb.com/installs/mstuttgart.odoo-scaffold.svg?style=flat-square">
+<img src="https://vsmarketplacebadge.apphb.com/installs/mstuttgart.odoo-scaffold.svg?style=flat-square" alt="Installs">
 </a>
 <a href="https://marketplace.visualstudio.com/items?itemName=mstuttgart.odoo-scaffold">
-<img src="https://vsmarketplacebadge.apphb.com/rating/mstuttgart.odoo-scaffold.svg?style=flat-square">
+<img src="https://vsmarketplacebadge.apphb.com/rating/mstuttgart.odoo-scaffold.svg?style=flat-square" alt="Rating">
 </a>
 
 </p>
@@ -98,7 +98,7 @@ List of currently used properties:
 
 ## Release Notes
 
-See [Changelog.md](CHANGELOG.md)
+See [changelog](CHANGELOG.md).
 
 ## Credits
 
