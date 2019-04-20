@@ -24,6 +24,9 @@ export function activate(context: vscode.ExtensionContext) {
         // Get odoo-bin path from configuration
         const odooBinPath = vscode.workspace.getConfiguration('odooScaffold').get('odooBinPath');
 
+        // Get Python enviromnent path
+        const pythonPath = vscode.workspace.getConfiguration('python').get('pythonPath');
+
         if (!odooBinPath) {
             console.log('OdooBinPath not set in settings. Please add it');
             vscode.window.showInformationMessage('OdooBinPath not set in settings. Please add it');
@@ -65,7 +68,7 @@ export function activate(context: vscode.ExtensionContext) {
 
                 // Run odoo scaffold command
                 var { spawn } = require('child_process');
-                var process = spawn(odooBinPath, ['scaffold', module_name, fullPath]);
+                var process = spawn(pythonPath, [odooBinPath, 'scaffold', module_name, fullPath]);
 
                 process.stdout.on('data', (data: string) => {
                     console.log(`stdout: ${data}`);
