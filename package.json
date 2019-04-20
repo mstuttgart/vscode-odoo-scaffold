@@ -2,7 +2,7 @@
     "name": "odoo-scaffold",
     "displayName": "Odoo Scaffold",
     "description": "Odoo modules made easy",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "publisher": "mstuttgart",
     "license": "SEE LICENSE IN LICENSE",
     "engines": {
