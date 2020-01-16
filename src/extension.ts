@@ -20,7 +20,10 @@ export function activate(context: vscode.ExtensionContext) {
 
         // Get path where module will be created
         let relativePath = fileObj ? fileObj.path : projectRoot;
-
+        
+        if (process.platform == 'win32' && relativePath.charAt(0) == '/') {
+            relativePath = relativePath.substr(1);
+        }
         // Get odoo-bin path from configuration
         const odooBinPath = vscode.workspace.getConfiguration('odooScaffold').get('odooBinPath');
 
