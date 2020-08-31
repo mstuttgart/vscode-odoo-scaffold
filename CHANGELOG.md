@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.1.3
+
+- Adjust prepopulated module path in Windows. Thanks @captivea-kco
 
 ## 0.1.2
 
