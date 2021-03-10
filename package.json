@@ -49,6 +49,12 @@
                         "default": "",
                         "description": "Set odoo-bin path",
                         "scope": "window"
+                    },
+					"odooScaffold.odooTemplatePath": {
+                        "type": "string",
+                        "default": "",
+                        "description": "Set odoo template path",
+                        "scope": "window"
                     }
                 }
             }
