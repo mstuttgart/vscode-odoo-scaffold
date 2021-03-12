@@ -69,15 +69,18 @@ export function activate(context: vscode.ExtensionContext) {
                     return;
                 }
 
+                const odooTemplatePath = vscode.workspace.getConfiguration('odooScaffold').get('odooTemplatePath');
+
                 // Run odoo scaffold command
                 var { spawn } = require('child_process');
+    
                 if (!odooTemplatePath) {
                     console.log('OdooTemplatePath not set in settings.');
                     var process = spawn(pythonPath, [odooBinPath, 'scaffold', module_name, fullPath]);
                 }
                 else {
                     var process = spawn(pythonPath, [odooBinPath, 'scaffold', '-t', odooTemplatePath, module_name, fullPath]);
-                }                
+                }
 
                 process.stdout.on('data', (data: string) => {
                     console.log(`stdout: ${data}`);
