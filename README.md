@@ -93,6 +93,8 @@ You need to set `odoo-bin` path of you `workspace settings` to made this extensi
 ```json
 {
   "odooScaffold.odooBinPath": "absolute/path/to/odoo-bin",
+  "pythonVirtualEnv": "absolute/path/to/virtualenv/bin/python",
+  "odooTemplatePath": "absolute/path/to/moduletemplate" // optional
 }
 ```
 
@@ -102,4 +104,4 @@ See [changelog](CHANGELOG.md).
 
 ## Credits
 
-Copyright (C) 2018 by Michell Stuttgart
+Copyright (C) 2018-2021 by Michell Stuttgart
