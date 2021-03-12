@@ -21,18 +21,25 @@ export function activate(context: vscode.ExtensionContext) {
         // Get path where module will be created
         let relativePath = fileObj ? fileObj.path : projectRoot;
         
-        if (process.platform == 'win32' && relativePath.charAt(0) == '/') {
+        if (process.platform === 'win32' && relativePath.charAt(0) === '/') {
             relativePath = relativePath.substr(1);
         }
+
         // Get odoo-bin path from configuration
         const odooBinPath = vscode.workspace.getConfiguration('odooScaffold').get('odooBinPath');
 
         // Get Python enviromnent path
-        const pythonPath = vscode.workspace.getConfiguration('python').get('pythonPath');
+        const pythonPath = vscode.workspace.getConfiguration('odooScaffold').get('pythonVirtualEnv');
 
         if (!odooBinPath) {
             console.log('OdooBinPath not set in settings. Please add it');
             vscode.window.showInformationMessage('OdooBinPath not set in settings. Please add it');
+            return;
+        }
+
+        if (!pythonPath) {
+            console.log('pythonVirtualEnv not set in settings. Please add it');
+            vscode.window.showInformationMessage('pythonVirtualEnv not set in settings. Please add it');
             return;
         }
 
@@ -72,14 +79,27 @@ export function activate(context: vscode.ExtensionContext) {
                 const odooTemplatePath = vscode.workspace.getConfiguration('odooScaffold').get('odooTemplatePath');
 
                 // Run odoo scaffold command
+                // const spawn = require('child_process').spawnSync;
+
+                var process;
+
                 var { spawn } = require('child_process');
     
                 if (!odooTemplatePath) {
                     console.log('OdooTemplatePath not set in settings.');
-                    var process = spawn(pythonPath, [odooBinPath, 'scaffold', module_name, fullPath]);
+
+                    console.log(odooBinPath);
+                    console.log(module_name);
+                    console.log(fullPath);
+                    console.log(pythonPath)
+
+                    process = spawn(pythonPath, [odooBinPath, 'scaffold', module_name, fullPath]);
+
+                    console.log('stdout ', process.stdout.toString());
+
                 }
                 else {
-                    var process = spawn(pythonPath, [odooBinPath, 'scaffold', '-t', odooTemplatePath, module_name, fullPath]);
+                    process = spawn(pythonPath, [odooBinPath, 'scaffold', '-t', odooTemplatePath, module_name, fullPath]);
                 }
 
                 process.stdout.on('data', (data: string) => {

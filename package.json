@@ -50,6 +50,12 @@
                         "description": "Set odoo-bin path",
                         "scope": "window"
                     },
+                    "odooScaffold.pythonVirtualEnv": {
+                        "type": "string",
+                        "default": "",
+                        "description": "Set Python from you virtualenv",
+                        "scope": "window"
+                    },
                     "odooScaffold.odooTemplatePath": {
                         "type": "string",
                         "default": "",
