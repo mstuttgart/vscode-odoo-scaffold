@@ -1,5 +1,12 @@
 # Change Log
 
+# 0.1.5
+
+-- Fix links in README
+-- Improve README text
+-- Add publish github action
+-- Add FUNDING.yml
+
 ## 0.1.4
 
 -- Fix bug in module creation
