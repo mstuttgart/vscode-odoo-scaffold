@@ -6,6 +6,7 @@
 -- Improve README text
 -- Add publish github action
 -- Add FUNDING.yml
+-- Fix devDependencies
 
 ## 0.1.4
 
