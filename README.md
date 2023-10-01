@@ -11,7 +11,6 @@ Visual Code Odoo Scaffold
 <h4 align="center">A Visual Code extension to create Odoo modules easily</h4>
 
 <p align="center">
-
   <a href="https://marketplace.visualstudio.com/items?itemName=mstuttgart.odoo-scaffold">
     <img src="https://vsmarketplacebadges.dev/version-short/mstuttgart.odoo-scaffold.png?style=for-the-badge&color=875A7B" alt="Version">
   </a>
@@ -24,22 +23,15 @@ Visual Code Odoo Scaffold
   <a href="https://marketplace.visualstudio.com/items?itemName=mstuttgart.odoo-scaffold">
 <img alt="Visual Studio Marketplace Rating" src="https://img.shields.io/visual-studio-marketplace/r/mstuttgart.odoo-scaffold?color=875A7B&style=for-the-badge">
   </a>
-
 </p>
 
 <p align="center">
-
-<b><a href="#about">About</a></b>
-|
-<b><a href="#requirements">Requirements</a></b>
-|
-<b><a href="#installation">Installation</a></b>
-|
-<b><a href="#usage">Usage</a></b>
-|
-<b><a href="#release-notes">Release Notes</a></b>
-|
-<b><a href="#credits">Credits</a></b>
+<a href="#about">About</a> |
+<a href="#requirements">Requirements</a> |
+<a href="#installation">Installation</a> |
+<a href="#usage">Usage</a> |
+<a href="#release-notes">Release Notes</a> |
+<a href="#credits">Credits</a>
 </p>
 
 ## About
